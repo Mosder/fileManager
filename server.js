@@ -1,6 +1,5 @@
 var express = require("express");
 var app = express();
-const PORT = 3000;
 var hbs = require('express-handlebars');
 var path = require("path");
 let filesArray = [];
@@ -32,9 +31,8 @@ app.use(express.static('static'));
 app.use(express.urlencoded({ extended: true }));
 app.use(session({ secret: 'secret', resave: true, saveUninitialized: true }));
 
-app.listen(PORT, function () {
-    console.log("start serwera na porcie " + PORT);
-})
+app.listen(process.env.PORT || 3000,
+    () => console.log("Server is running..."));
 
 app.get("/login", function (req, res) {
     if (req.session.gut) {
