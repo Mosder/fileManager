@@ -1,0 +1,105 @@
+body {
+    margin: 0;
+    background-color: #333;
+    color: #ccc;
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+    width: 100vw;
+    height: 100vh;
+}
+#nav {
+    background-color: #333;
+    font-size: 30px;
+    line-height: 10vh;
+}
+#nav > a {
+    margin-left: 10px;
+}
+a {
+    color: #ccc;
+}
+#content {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    overflow-y: auto;
+}
+#sidebar {
+    background-color: #555;
+    text-align: center;
+}
+#main {
+    background-color: #777;
+}
+#formUpload {
+    margin: 10px;
+}
+#filesHead {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    height: 30px;
+    line-height: 30px;
+}
+.gridEl {
+    text-align: center;
+}
+#filesHead > div {
+    background-color: #666;
+}
+.row {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    height: 75px;
+}
+.row > div {
+    text-align: center;
+    align-self: center;
+    position: relative;
+}
+.row > div > input {
+    border: none;
+    background-color: transparent;
+    color: #ccc;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.icon {
+    background: url("../assets/icons.png");
+    background-size: 245px 192px;
+    width: 49px;
+    height: 64px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.infoRow {
+    margin: 10px;
+}
+.infoRow > strong {
+    color: #222;
+    text-decoration: underline;
+}
+.infoRow > strong::after {
+    color: #222;
+    content: ':';
+    text-decoration: none;
+    display: inline-block;
+}
+#login {
+    width: 300px;
+    height: 90px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+#wrong {
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #900;
+}

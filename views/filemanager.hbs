@@ -1,0 +1,16 @@
+<div id="sidebar">
+    <p>filemanager</p>
+    <a href="/reset" id="reset">Delete data about files</a>
+</div>
+<div id="main">
+    <div id="filesHead">
+        {{#each head}}
+        <div class="gridEl">{{this}}</div>
+        {{/each}}
+    </div>
+    <div id="filesList">
+        {{#each files}}
+        {{>row}}
+        {{/each}}
+    </div>
+</div>

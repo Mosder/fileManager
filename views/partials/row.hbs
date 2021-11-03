@@ -1,0 +1,13 @@
+<form class="row">
+    <input type="hidden" name="id" value={{this.id}} />
+    <div>{{this.id}}</div>
+    <div>
+        <div class="icon" style="background-position: -{{this.coords.x}}px -{{this.coords.y}}px;"></div>
+    </div>
+    <div>{{this.name}}</div>
+    <div>{{this.size}}</div>
+    <div>{{this.type}}</div>
+    <div><input type="submit" value="DELETE" formmethod="post" formaction="" /></div>
+    <div><input type="submit" value="INFO" formmethod="get" formaction="/info" /></div>
+    <div><input type="submit" name="down" value="DOWNLOAD" formmethod="post" formaction="" /></div>
+</form>
