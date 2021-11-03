@@ -62,22 +62,22 @@ app.get("/", function (req, res) {
     }
 });
 app.post('/', function (req, res) {
-    // let form = formidable({});
-    // form.keepExtensions = true;
-    // form.multiples = true;
-    // form.uploadDir = __dirname + '/static/upload/';
+    let form = formidable({});
+    form.keepExtensions = true;
+    form.multiples = true;
+    form.uploadDir = __dirname + '/static/upload/';
 
-    // form.parse(req, function (err, fields, files) {
-    //     let f = files.files;
-    //     if (Array.isArray(f)) {
-    //         for (let file of f) {
-    //             filesArray.push({ id: currentId++, name: file.name, path: file.path, size: file.size, type: file.type, savedate: Date.now() });
-    //         }
-    //     }
-    //     else {
-    //         filesArray.push({ id: currentId++, name: f.name, path: f.path, size: f.size, type: f.type, savedate: Date.now() });
-    //     }
-    // });
+    form.parse(req, function (err, fields, files) {
+        let f = files.files;
+        if (Array.isArray(f)) {
+            for (let file of f) {
+                filesArray.push({ id: currentId++, name: file.name, path: file.path, size: file.size, type: file.type, savedate: Date.now() });
+            }
+        }
+        else {
+            filesArray.push({ id: currentId++, name: f.name, path: f.path, size: f.size, type: f.type, savedate: Date.now() });
+        }
+    });
     res.render('upload.hbs');
 });
 app.get("/filemanager", function (req, res) {
