@@ -77,8 +77,8 @@ app.post('/', function (req, res) {
         else {
             filesArray.push({ id: currentId++, name: f.name, path: f.path, size: f.size, type: f.type, savedate: Date.now() });
         }
+        res.render('upload.hbs');
     });
-    res.render('upload.hbs');
 });
 app.get("/filemanager", function (req, res) {
     if (req.session.gut) {
